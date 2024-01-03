@@ -1,5 +1,6 @@
 import './App.scss'
-import Spinner from './components/spinner'
+import Spinner from './components/spinner/Spinner'
+
 
 function App() {
 
