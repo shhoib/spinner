@@ -1,4 +1,5 @@
 @import '../../App.scss';
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,600;0,700;1,600&family=Inter:wght@500;600;700;900&family=Joti+One&family=Montserrat:ital,wght@0,500;1,500&family=Outfit:wght@500;600;900&family=Playfair+Display&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,400&family=Righteous&family=Roboto:wght@300;400;500&family=Rubik&family=Rubik+Glitch&family=Rubik+Maps&family=Rubik+Scribble&display=swap');
 
 .spinner{
     display: flex;
@@ -6,108 +7,41 @@
     align-items: center;
     justify-content: center;
     background-size: cover;
-    // margin-top: 30%;
     height: 100vh;
+    background-color: rgb(20,20,22);
 
-    @include desktop{
-        // margin-top: 10%;
-    } 
-    &.winner {
-        background-image: url("https://i.pinimg.com/originals/f0/f4/84/f0f48450f6e8447740751d57b5becd59.gif");
-        background-size: cover;
-        animation: fadeIn 1s ease-out infinite 1s;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      .heading{
-        height: 200px;
-        width: 100%;
-        background-size: cover;
-        background-image: url('spinner.gif');
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-      }
-      .text{
-        margin-top: 20px;
-        height: 100px;
-        width: 50%;
-        background-image: url('spintowin.jpg');
-        background-size: cover;
-
-        @include desktop{
-          width: 20%;
-          height: 100px;
-        }
-
-      }
-      .wallet{
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 2vh;
-        display: flex;
-        align-items: center;
-        font-weight: 400;
-        color: rgb(36, 35, 35);
-
-        h4{
-          @include desktop{
-            font-size: 4vh;
-          }
-        }
-
-        .walleticon{
-          font-size: 2.8vh;
-          margin-right: 3px;
-
-          @include desktop{
-            font-size: 5vh;
-          }
-        }
-
-        @include desktop{
-          font-size: 4vh;
-          right: 12vh;
-          top: 10vh;
-        }
-      }
-      .profile{
-        position: absolute;
-        top: 20px;
-        left: 25px;
-        font-size: 2vh;
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-        color: rgb(36, 35, 35);
-
-        .profileicon{
-          font-size: 2.5vh;
-          margin-right: 3px;
-
-          @include desktop{
-            font-size: 6vh;
-          }
-
-          h4{
-            @include desktop{
-              font-size: 3vh;
-            }
-          }
-        }
-
-        @include desktop{
+        @include desktop {
           font-size: 4vh;
           left: 12vh;
           top: 10vh;
+        }
+
+        &.winner{
+          // background-image: url('https://i.pinimg.com/originals/65/34/ea/6534ea650360fdf23995270b012e5bbc.gif');
+          background-size: cover;
+        }
+      
+        .winnerImg{
+          width: 70%;
+          animation: winnerAnimation 1s infinite;
+          transform-origin: center center;
+          position: absolute;
+          top: 22%;
+
+          @include desktop{
+            width: 30%;
+            top: 7%;
+          }
+        }
+
+      @keyframes winnerAnimation {
+        from{
+          opacity: 0;
+          transform: scale(0.8); 
+        }
+        to{
+          opacity: 1;
+          transform: scale(1); 
         }
       }
 
@@ -115,51 +49,296 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    // margin-top: 70%;
     overflow: hidden;
-    width: 100%;
-    height: 110px;
-
-    .image1, .image2, .image3 {
-        width: 110px;
-        height: 110px;
-        overflow: hidden;
-        background-size: cover;
-        margin: 5px;
-        border-radius: 10px;
-    }
+    width: 280px;
+    height: 290px;
+    position: relative;
 }
 
 button{
-    background-color: rgb(51,171,224);
     border: none;
-    padding-left: .9rem;
-    padding-right: .9rem;
-    padding-top: .6rem;
-    padding-bottom: .6rem;
-    border-radius: 10px;
+    padding:.6rem .9rem .6rem .9rem;
+    border-radius: 2px;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
+    margin-top: .5rem;
+    font-family: 'Joti One', serif;
+    background-color: rgb(79,24,169);
+    clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+    font-weight: 900;
 
 }
+button:hover{
+  letter-spacing: 1px;
+}
 
-@keyframes roll {
+@keyframes roll1 {
     0% {
-      transform: translateY(900px);
+      transform: translateY(-400px);
+    }
+    30%{
+      transform: translateY(0px);
     }
     100% {
-      transform: translateY(-850px);
+      transform: translateY(-500px);
     }
   }
-.spinningImage{
-    animation: roll 3s linear infinite;
-    width: 110px;
+@keyframes roll2 {
+    0% {
+      transform: translateY(-200px);
+    }
+    30%{
+      transform: translateY(-600px);
+    }
+    100% {
+      transform: translateY(-300px);
+    }
+  }
+@keyframes roll3 {
+    0% {
+      transform: translateY(-300px);
+    }
+    30%{
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(300px);
+    }
+  }
+.spinningImage1{
+  height: 270px;
+  overflow: hidden;
+  border-radius: 10px;
+    width:90px;
     margin: 5px;
+  
+    img{
+    width: 100%;
+    animation: roll1 1s linear ;
     border-radius: 10px;
     overflow: hidden;
-    // height: 700px;
+    position: relative;
+    top: 35px;
+  }
+}
+.spinningImage2{
+  height: 270px;
+  overflow: hidden;
+  border-radius: 10px;
+  width:90px;
+  margin: 5px;
+
+  img{
+  width: 100%;
+    animation: roll2 2s linear ;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 185px;
+}
+}
+.spinningImage3{
+  height: 270px;
+  overflow: hidden;
+  border-radius: 10px;
+  width:90px;
+  margin: 5px;
+
+  img{
+  width: 100%;
+    animation: roll1 3s linear ;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    top: -40px;
+}
+}
+
+.notspinning1{
+  height: 270px;
+  width:90px;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+
+
+  img{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    top: -180px;
+  }
+}
+.notspinning2{
+  height: 270px;
+  width: 90px;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+
+  img{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  top: -358px;
+  }
+}
+.notspinning3{
+  height: 270px;
+  width: 90px;
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+
+  img{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  top: -3px;
+}
+}
+
+.reels1{
+  height: 70px;
+  position: absolute;
+  left: 15px;
+  z-index: 8;
+}
+.reels2{
+  height: 70px;
+  position: absolute;
+  left:110px;
+  z-index: 8;
+}
+.reels3{
+  height: 70px;
+  position: absolute;
+  right: 10px;
+  z-index: 8;
+}
+
+  @keyframes reelsAnimate {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .reelswin{
+    animation: reelsAnimate 1s infinite;
+  }
+
+  @keyframes coinRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.wallet{
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  height: 100px;
+  width: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 5vh;
+  font-family: 'Joti One', serif;
+
+
+  img{
+    height: 30px;
+    margin-left: 5px;
+    animation: coinRotate 5s linear infinite;
+  }
+}
+
+svg{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+}
+
+.spintowin{
+  position: absolute;
+  top: 50px;
+  left: 25%;
+  height: 100px;
+  z-index: 10;
+}
+
+.amount-container{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  h4{
+    margin: 8px;
+  }
+}
+
+.modal{
+  position: absolute;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 15;
+  width: 80%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: .5rem;
+
+  @include desktop{
+    width: 40%;
+    top: 10px;
+  }
+
+  .buttonContainer{
+    display: flex;
+    
+    button{
+      margin: 10px;
+    }
+  }
+
+  input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin: 5px;
+    padding-left: 5px;
+
+    &::placeholder,
+    &::-webkit-input-placeholder {
+      color: #999; 
+    }
+
+    &:focus {
+      outline: none; 
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    }
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
 }
 }
